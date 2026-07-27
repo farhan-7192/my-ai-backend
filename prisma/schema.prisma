@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+
+model Interaction {
+  id        Int      @id @default(autoincrement()) // A unique ID number for every row (1, 2, 3...)
+  prompt    String   // The question the user asked
+  answer    String   // The reply Gemini gave
+  createdAt DateTime @default(now()) // Automatically saves the exact time it was created
+}
